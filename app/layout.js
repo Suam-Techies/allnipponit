@@ -30,12 +30,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
       <body>
-        <TopBar />
-        <Header />
+        <StructuredData />
+          <Header />
         <main>{children}</main>
         <Footer />
       </body>

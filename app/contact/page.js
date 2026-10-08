@@ -96,15 +96,7 @@ export default function ContactPage() {
                       <p><a href={BUSINESS.emailHref}>{BUSINESS.email}</a></p>
                     </div>
                   </div>
-                  <div className={styles.infoItem}>
-                    <span className={styles.infoIcon}>
-                      <IconClock size={20} color="var(--cyan-500)" />
-                    </span>
-                    <div>
-                      <strong>Business Hours</strong>
-                      <p>{BUSINESS.hours}</p>
-                    </div>
-                  </div>
+                 
                 </div>
 
                 {BUSINESS.mapDirectionsUrl && (

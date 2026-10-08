@@ -3,7 +3,7 @@ import BUSINESS from "../business-config";
 export default function StructuredData() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "LocalBusiness",
     name: BUSINESS.name,
     description:
       "Professional IT support, managed IT services, computer support, network assistance, and business technology solutions in South Jordan, Utah.",
@@ -17,6 +17,13 @@ export default function StructuredData() {
       addressRegion: BUSINESS.address.stateAbbr,
       postalCode: BUSINESS.address.zip,
       addressCountry: "US",
+    },
+    hasMap: BUSINESS.mapDirectionsUrl,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
     },
     areaServed: BUSINESS.serviceAreas.map((area) => ({
       "@type": "City",

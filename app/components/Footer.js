@@ -76,10 +76,7 @@ export default function Footer() {
               <a href={BUSINESS.emailHref}>{BUSINESS.email}</a>
             </li>
           </ul>
-          <div className={styles.hours}>
-            <strong>Business Hours</strong>
-            <p>{BUSINESS.hours}</p>
-          </div>
+         
         </div>
       </div>
 

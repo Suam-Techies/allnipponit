@@ -63,7 +63,7 @@ export default function HomePage() {
           <div className={styles.heroImage}>
             <Image
               src="/hero-it-environment.jpg"
-              alt="Professional IT support environment with multiple monitors showing network monitoring and cybersecurity dashboards in a modern Seattle office"
+              alt="Professional IT support environment with network monitoring and cybersecurity dashboards"
               width={640}
               height={400}
               priority
@@ -84,7 +84,13 @@ export default function HomePage() {
             <div className={styles.bizCardInfo}>
               <span>
                 <IconMapPin size={18} color="var(--cyan-500)" />
-                {BUSINESS.address.city}, {BUSINESS.address.state}
+                <a
+                  href={BUSINESS.mapDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {BUSINESS.address.full}
+                </a>
               </span>
               <span>
                 <IconPhone size={18} color="var(--cyan-500)" />
@@ -341,28 +347,21 @@ export default function HomePage() {
       </section>
 
       {/* ===== LOCATION SECTION ===== */}
-      <section className={styles.seattleSection}>
-        <div className={styles.seattleImageWrap}>
-          <Image
-            src="/seattle-skyline.jpg"
-            alt="South Jordan Utah business technology environment"
-            fill
-            className={styles.seattleImg}
-          />
-          <div className={styles.seattleOverlay} />
-        </div>
-        <div className={`container ${styles.seattleContent}`}>
-          <span className="overline">Serving South Jordan, Utah</span>
-          <h2 className={styles.seattleTitle}>IT Support in South Jordan, Utah</h2>
-          <p className={styles.seattleText}>
-            All Nippon IT provides dedicated technology support for businesses in South Jordan,
-            Utah. Located at 1124 South Jordan Pkwy, our services are designed to help local organizations
-            manage everyday technology, maintain optimal uptime, and resolve IT challenges swiftly.
+      <section className={styles.localSection}>
+        <div className={`container ${styles.localContent}`}>
+          <span className="overline">Your Local IT Provider</span>
+          <h2 className={styles.localTitle}>
+            IT Support in {BUSINESS.address.city}, {BUSINESS.address.state}
+          </h2>
+          <p className={styles.localText}>
+            All Nippon IT is based in {BUSINESS.address.city}, {BUSINESS.address.state},
+            serving local businesses with on-site and remote IT support. Find our business
+            address and contact details below.
           </p>
-          <div className={styles.seattleMeta}>
+          <div className={styles.localMeta}>
             <span>
               <IconMapPin size={18} color="var(--cyan-400)" />
-              {BUSINESS.address.city}, {BUSINESS.address.stateAbbr}
+              {BUSINESS.address.full}
             </span>
             <span>
               <IconPhone size={18} color="var(--cyan-400)" />
@@ -376,6 +375,14 @@ export default function HomePage() {
           <Link href="/contact" className="btn btn-primary btn-lg">
             Contact Our IT Support Team
           </Link>
+          <a
+            href={BUSINESS.mapDirectionsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline btn-lg"
+          >
+            Get Directions
+          </a>
         </div>
       </section>
 
